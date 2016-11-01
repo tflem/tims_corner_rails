@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '5.0.0.1'
+gem 'pg', '0.18.4'
 gem 'puma',         '3.4.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'google-webfonts'
@@ -13,7 +14,6 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
 
 group :development, :test do
-  gem 'pg', '0.18.4'
   gem 'byebug',  '9.0.0', platform: :mri
 end
 
@@ -32,7 +32,7 @@ group :test do
 end
 
 group :production do
-  end
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
