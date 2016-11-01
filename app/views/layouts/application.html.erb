@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= render 'layouts/head' %>
+    <%= render 'layouts/shim' %>
+
+  </head>
+
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <%= render 'layouts/header' %>
+
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+
+  </body>
+</html>
