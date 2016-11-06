@@ -4,14 +4,13 @@
     <title><%= full_title(yield(:title)) %></title>
     <%= render 'layouts/head' %>
     <%= render 'layouts/shim' %>
-
   </head>
 
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <%= render 'layouts/header' %>
-
     <%= yield %>
-    <%= render 'layouts/footer' %>
 
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
