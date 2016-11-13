@@ -1,0 +1,15 @@
+<% provide(:title, 'All Users') %>
+
+        <!-- All Users Section -->
+    <section id="all users" class="container content-section">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <h1 class="text-center">All Users</h1>
+                <ul class="users">
+                  <%= will_paginate %>
+                  <%= render @users %>
+                  <%= will_paginate %>
+            </div>
+        </div>
+    </section>
+
