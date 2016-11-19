@@ -35,7 +35,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     assert_select "a", text: "delete", count: 0
   end
 
-    test "should only show activated users" do
+  test "should only show activated users" do
     log_in_as(@non_admin)
     get user_path(@non_activated_user)
     assert_redirected_to root_url

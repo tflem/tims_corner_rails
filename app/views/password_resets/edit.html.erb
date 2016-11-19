@@ -1,0 +1,26 @@
+<% provide(:title, "Reset Password") %>
+
+        <!-- Reset Password Section -->
+    <section id="forgot password" class="container content-section">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <h1 class="text-center">Reset Password</h1>
+              <% flash.each do |message_type, message| %>
+                <div class="alert alert-<%= message_type %>"><%= message %></div>
+              <% end %>
+              <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+                <%= render 'shared/error_messages' %>
+
+              <%= hidden_field_tag :email, @user.email %>
+
+              <%= f.label :password %>
+              <%= f.password_field :password, placeholder: 'Password', class: 'form-control' %>
+
+              <%= f.label :password_confirmation, "Confirmation" %>
+              <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation', class: 'form-control' %>
+
+              <%= f.submit "Update Password", class: "btn btn-default btn-lg" %>
+              <% end %>
+            </div>
+        </div>
+    </section>
