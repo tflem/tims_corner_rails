@@ -5,8 +5,11 @@
     <section id="sign up" class="container content-section">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
+              <%= form_for(@user) do |f| %>
               <h1 class="text-center">Sign Up</h1>
-                <%= render "form", url: users_path(@user) %>
+                <%= render "form", f:f %>
+                <%= render 'shared/error_messages', object: f.object %>
+              <% end %>
             </div>
         </div>
     </section>

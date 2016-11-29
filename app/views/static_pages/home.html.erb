@@ -1,21 +1,9 @@
-   <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Welcome to Tim's Corner</h1>
-                        <% flash.each do |message_type, message| %>
-                            <div class="alert alert-<%= message_type %>"><%= message %></div>
-                        <% end %>
-                        <p class="intro-text">A Ruby on Rails app and blog detailing my adventures in web development.</p>
-                        <%= link_to "Log In", login_path, class: "btn btn-default btn-lg" %>
-                        <%= link_to "Sign Up", signup_path, class: "btn btn-default btn-lg" %>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-  </body>
-</html>
+<% provide(:title, "Home") %>
+<% if logged_in? %>
+  <%= render "shared/user_posts" %>
+<% else %>
+  <%= render "shared/landing_page" %>
+<% end %>
+    </div>
+  </div>
+</section>

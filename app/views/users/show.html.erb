@@ -3,7 +3,7 @@
         <!-- User Section -->
     <section id="user" class="container content-section text-center">
         <div class="row">
-            <div class="col-lg-6 col-lg-offset-2">
+            <div class="col-lg-8 col-lg-offset-2">
                 <% flash.each do |message_type, message| %>
                     <div class="alert alert-<%= message_type %>"><%= message %></div>
                 <% end %>
@@ -11,6 +11,13 @@
                   <%= gravatar_for @user %>
                   <%= @user.name %>
                 </h1>
+                  <% if @user.microposts.any? %>
+                    <h3>Microposts (<%= @user.microposts.count %>)</h3>
+                    <ol class="microposts">
+                        <%= render @microposts %>
+                    </ol>
+                  <%= will_paginate @microposts %>
+                <% end %>
             </div>
         </div>
     </section>
