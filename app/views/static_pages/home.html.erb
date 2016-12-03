@@ -1,6 +1,7 @@
 <% provide(:title, "Home") %>
 <% if logged_in? %>
   <%= render "shared/user_posts" %>
+  <%= render 'shared/stats' %>
 <% else %>
   <%= render "shared/landing_page" %>
 <% end %>
